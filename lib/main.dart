@@ -22,39 +22,107 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        BotaoXilofone(
-          numero: 1,
-          cor: Colors.red,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text('SonnyDrumer'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(5),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Expanded(
+              child: Row(
+                children: [
+                  BotaoXilofone(
+                    numero: 1,
+                    cor: Colors.green,
+                  ),
+                  BotaoXilofone(
+                    numero: 2,
+                    cor: Colors.green,
+                  ),
+                  BotaoXilofone(
+                    numero: 3,
+                    cor: Colors.green,
+                  ),
+                  BotaoXilofone(
+                    numero: 4,
+                    cor: Colors.green,
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Row(
+                children: [
+                  BotaoXilofone(
+                    numero: 5,
+                    cor: Colors.pink,
+                  ),
+                  BotaoXilofone(
+                    numero: 6,
+                    cor: Colors.pink,
+                  ),
+                  BotaoXilofone(
+                    numero: 7,
+                    cor: Colors.pink,
+                  ),
+                  BotaoXilofone(
+                    numero: 8,
+                    cor: Colors.pink,
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Row(
+                children: [
+                  BotaoXilofone(
+                    numero: 9,
+                    cor: Colors.yellow,
+                  ),
+                  BotaoXilofone(
+                    numero: 10,
+                    cor: Colors.yellow,
+                  ),
+                  BotaoXilofone(
+                    numero: 11,
+                    cor: Colors.yellow,
+                  ),
+                  BotaoXilofone(
+                    numero: 12,
+                    cor: Colors.yellow,
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Row(
+                children: [
+                  BotaoXilofone(
+                    numero: 13,
+                    cor: Colors.blue,
+                  ),
+                  BotaoXilofone(
+                    numero: 14,
+                    cor: Colors.blue,
+                  ),
+                  BotaoXilofone(
+                    numero: 15,
+                    cor: Colors.blue,
+                  ),
+                  BotaoXilofone(
+                    numero: 16,
+                    cor: Colors.blue,
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-        BotaoXilofone(
-          numero: 2,
-          cor: Colors.orange,
-        ),
-        BotaoXilofone(
-          numero: 3,
-          cor: Colors.yellow,
-        ),
-        BotaoXilofone(
-          numero: 4,
-          cor: Colors.green,
-        ),
-        BotaoXilofone(
-          numero: 5,
-          cor: Colors.blue,
-        ),
-        BotaoXilofone(
-          numero: 6,
-          cor: Colors.purple,
-        ),
-        BotaoXilofone(
-          numero: 7,
-          cor: Colors.pink,
-        ),
-      ],
-    ));
+      ),
+    );
   }
 }
 
@@ -67,13 +135,22 @@ class BotaoXilofone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: FlatButton(
-        // child: Text(''),
-        color: cor,
-        onPressed: () {
+      child: GestureDetector(
+        onTap: () {
           var player = AudioCache();
-          player.play('note$numero.wav');
+          player.play('beat$numero.wav');
         },
+        child: Expanded(
+          child: Container(
+            // height: 200,
+            // width: 200,
+            margin: EdgeInsets.all(5),
+            decoration: BoxDecoration(
+              color: cor,
+              borderRadius: BorderRadius.circular(15),
+            ),
+          ),
+        ),
       ),
     );
   }
