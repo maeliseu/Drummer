@@ -7,7 +7,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.deepOrange),
+      theme: ThemeData(
+        // primarySwatch: Colors.deepOrange,
+        scaffoldBackgroundColor: Colors.black,
+        // fontFamily: "Grandstander",
+      ),
       home: HomePage(),
     );
   }
@@ -22,10 +26,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('SonnyDrumer'),
+        title: Text(
+          'SonnyDrumer',
+          style: TextStyle(fontFamily: 'Grandstander'),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(5),
