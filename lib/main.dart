@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        // primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.deepOrange,
         scaffoldBackgroundColor: Colors.black,
         // fontFamily: "Grandstander",
       ),
@@ -148,15 +148,13 @@ class BotaoXilofone extends StatelessWidget {
           var player = AudioCache();
           player.play('beat$numero.wav');
         },
-        child: Expanded(
-          child: Container(
-            // height: 200,
-            // width: 200,
-            margin: EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              color: cor,
-              borderRadius: BorderRadius.circular(15),
-            ),
+        child: Container(
+          // height: 200,
+          // width: 200,
+          margin: EdgeInsets.all(5),
+          decoration: BoxDecoration(
+            color: cor,
+            borderRadius: BorderRadius.circular(15),
           ),
         ),
       ),
